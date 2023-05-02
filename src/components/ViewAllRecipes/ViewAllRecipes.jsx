@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ChefInRecipe from '../ChefInRecipe/ChefInRecipe';
+// import ChefInRecipe from '../ChefInRecipe/ChefInRecipe';
 import Recipes from '../Recipes/Recipes';
+import { Suspense,lazy } from 'react';
+
+const ChefInRecipe = lazy(() => import('../ChefInRecipe/ChefInRecipe'));
 
 const ViewAllRecipes = () => {
     const [chef, setChef] = useState([]);
@@ -40,7 +43,10 @@ const ViewAllRecipes = () => {
                         <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
                     </div> : ""
             }
+            <Suspense fallback={<p>loadingggggggggg</p>}>
             <ChefInRecipe chef={chef}></ChefInRecipe>
+            </Suspense>
+           
             <Recipes recipes={recipes}></Recipes>
         </div>
     );
