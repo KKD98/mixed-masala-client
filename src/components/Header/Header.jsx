@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.css'
 
 const Header = () => {
@@ -24,7 +24,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn  bg-white text-gray-900 border-none hover:bg-yellow-600">Login</a>
+                    <Link to="/login" className="btn  bg-white text-gray-900 border-none hover:bg-yellow-600">Login</Link>
                 </div>
             </div>
         </div>

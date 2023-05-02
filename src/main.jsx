@@ -9,6 +9,7 @@ import HomePage from './components/HomePage/HomePage';
 import Blogs from './components/Blogs/Blogs';
 import HomeBody from './components/HomeBody/HomeBody';
 import ViewAllRecipes from './components/ViewAllRecipes/ViewAllRecipes';
+import Login from './components/Login/Login';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
     {
       path: "viewrecipes/:id",
       element: <ViewAllRecipes></ViewAllRecipes>
+    },
+    {
+      path: "login",
+      element: <Login></Login>
     }
   ]
   },
