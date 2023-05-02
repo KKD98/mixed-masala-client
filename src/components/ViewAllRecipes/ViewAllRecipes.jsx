@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ChefInRecipe from '../ChefInRecipe/ChefInRecipe';
 
 const ViewAllRecipes = () => {
     const [chef , setChef] = useState([]);
@@ -23,7 +24,7 @@ const ViewAllRecipes = () => {
    
     return (
         <div>
-            <h3>This is ViewAllRecipes section of id : {id}</h3>
+            <ChefInRecipe chef={chef}></ChefInRecipe>
            
         </div>
     );
