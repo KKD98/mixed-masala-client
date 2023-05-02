@@ -22,7 +22,7 @@ const Recipe = ({ recipe }) => {
     }
     return (
         <div>
-         <ToastContainer limit={1}/>
+         <ToastContainer/>
             <div className="card w-full bg-yellow-100 shadow-xl mb-5 p-3">
                 <div className="card-body">
                     <h2 className="card-title text-2xl font-sans mx-auto mb-4  bg-yellow-400  p-3  font-bold text-gray-900 rounded">{recipeName}</h2>
