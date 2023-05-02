@@ -4,7 +4,6 @@ import { FaThumbsUp } from "react-icons/fa";
 
 const SingleChef = ({ chefsData }) => {
     const {id , name, picture, description, experience, likes, number_of_recipes } = chefsData;
-    console.log(chefsData)
     return (
         <div className='h-[70%]'>
             <div className="card card-side  shadow-xl flex gap-0">

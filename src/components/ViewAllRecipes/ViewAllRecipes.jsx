@@ -4,6 +4,7 @@ import ChefInRecipe from '../ChefInRecipe/ChefInRecipe';
 
 const ViewAllRecipes = () => {
     const [chef , setChef] = useState([]);
+    const [recipes , setRecipes] = useState([]);
     const [loading , setLoading] = useState(true);
     const {id} = useParams();
 
@@ -20,7 +21,15 @@ const ViewAllRecipes = () => {
         .catch(error => console.log(error))
     } , [])
 
-    console.log(chef)
+   useEffect(() => {
+    fetch('http://localhost:5000/allrecipes')
+    .then(res => res.json())
+    .then(data =>{
+        const findRecipes = data.filter(element => element.chef_id === parseInt(id))
+        console.log(findRecipes)
+    })
+    .catch(error => console.log(error))
+   } , [])
    
     return (
         <div>
