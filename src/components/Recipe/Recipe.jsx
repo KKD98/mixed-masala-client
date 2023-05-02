@@ -8,7 +8,6 @@ const Recipe = ({ recipe }) => {
     const { recipeName, ingredients, cookingMethod, rating , id} = recipe;
     const [disabled, setDisabled] = useState(false);
     const handleToast = () => {
-
                 toast('🤩 Added to Favorites!', {
                     position: "top-right",
                     autoClose: 5000,
@@ -23,7 +22,7 @@ const Recipe = ({ recipe }) => {
     }
     return (
         <div>
-            <ToastContainer/>
+         <ToastContainer limit={1}/>
             <div className="card w-full bg-yellow-100 shadow-xl mb-5 p-3">
                 <div className="card-body">
                     <h2 className="card-title text-2xl font-sans mx-auto mb-4  bg-yellow-400  p-3  font-bold text-gray-900 rounded">{recipeName}</h2>
@@ -39,8 +38,7 @@ const Recipe = ({ recipe }) => {
                             />
                         </div>
 
-
-                        <button disabled={disabled} onClick={() => {handleToast()}} className="btn bg-yellow-400 text-gray-900 border-none hover:bg-yellow-600">
+                        <button disabled={disabled} onClick={handleToast} className="btn bg-yellow-400 text-gray-900 border-none hover:bg-yellow-600">
                             Add to Favorite</button>
                     </div>
                 </div>
