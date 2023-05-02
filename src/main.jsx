@@ -10,6 +10,7 @@ import Blogs from './components/Blogs/Blogs';
 import HomeBody from './components/HomeBody/HomeBody';
 import ViewAllRecipes from './components/ViewAllRecipes/ViewAllRecipes';
 import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
     {
       path: "login",
       element: <Login></Login>
+    },
+    {
+      path: "register",
+      element: <Register></Register>
     }
   ]
   },
