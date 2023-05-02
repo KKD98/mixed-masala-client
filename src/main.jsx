@@ -8,6 +8,7 @@ import {
 import HomePage from './components/HomePage/HomePage';
 import Blogs from './components/Blogs/Blogs';
 import HomeBody from './components/HomeBody/HomeBody';
+import ViewAllRecipes from './components/ViewAllRecipes/ViewAllRecipes';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
       path: "blogs",
       element: <Blogs></Blogs>
+    },
+    {
+      path: "viewrecipes/:id",
+      element: <ViewAllRecipes></ViewAllRecipes>
     }
   ]
   },

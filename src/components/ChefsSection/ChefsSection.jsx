@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import SingleChef from '../../SingleChef/SingleChef';
+import SingleChef from '../SingleChef/SingleChef';
 
 const ChefsSection = () => {
     const [allChefsData , setAllChefsData] = useState([]);
