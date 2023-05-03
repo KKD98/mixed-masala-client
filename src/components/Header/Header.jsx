@@ -11,7 +11,6 @@ const Header = () => {
     // console.log(usersName)
     // console.log(userPhoto)
 
-    const userProfile = userPhoto && userPhoto ;
 
     const userName = usersName? usersName : "No userName";
 
@@ -44,13 +43,14 @@ const Header = () => {
                         }}>Blog</NavLink>
                     </ul>
                 </div>
+               
                 <div className="navbar-end">
-                <Tooltip id="my-tooltip" />
+               <Tooltip className='mr-1 font-semibold' id="my-tooltip" />
                     {
-                        userProfile &&
-                            <div className="avatar">
-                                <div className="w-24 rounded-full" data-tooltip-id="my-tooltip" data-tooltip-content={userName}>
-                                    <img src= {userProfile} />
+                        userPhoto &&
+                            <div className="avatar mr-0 lg:mr-3 flex justify-end">
+                                <div className="w-10 rounded-full " data-tooltip-id="my-tooltip" data-tooltip-content={userName}>
+                                    <img src= {userPhoto} />
                                 </div>
                             </div>
                     }

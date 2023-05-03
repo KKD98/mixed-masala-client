@@ -40,13 +40,13 @@ const AuthProvider = ({children}) => {
 
     const updateUser = (userName , photo) => {
         setLoading(true);
-        setUsersName(userName);
-        setUserPhoto(photo);
         return updateProfile(auth.currentUser , {displayName: userName , photoURL: photo});
     }
 
     const logOut = () => {
         setLoading(true);
+        setUserPhoto(null);
+        setUsersName(null);
         return signOut(auth);
     }
 
@@ -54,6 +54,8 @@ const AuthProvider = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth , loggedUser => {
             console.log('logged in user inside auth state observer' , loggedUser)
             setUser(loggedUser);
+            setUsersName(loggedUser.displayName);
+            setUserPhoto(loggedUser.photoURL);
             setLoading(false);
         })
         return () => {
