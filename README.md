@@ -6,6 +6,7 @@ All steps are:
 * User should be login to see recipes
 * When Favorite button is clicked shown a toast
 * Users image is shown in header is user five their image
-* There is also Blog section , two meaningful section and a footer
+* There is also Blog section , two meaningful section and footer
 
 
+Live-site-link: https://mixed-masala.web.app
