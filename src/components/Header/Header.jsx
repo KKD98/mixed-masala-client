@@ -6,7 +6,7 @@ import { Tooltip } from 'react-tooltip';
 
 const Header = () => {
 
-    const { user, logOut, updateUser , usersName , userPhoto} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     const userImage = user?.photoURL ? user.photoURL : "";
     const userName = user?.displayName ? user.displayName : "";

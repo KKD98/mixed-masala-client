@@ -11,11 +11,7 @@ const githubProvider = new GithubAuthProvider();
 const AuthProvider = ({children}) => {
     const [user , setUser] = useState(null);
     const [loading , setLoading] = useState(true);
-    const [usersName , setUsersName] = useState("");
-    const [userPhoto , setUserPhoto] = useState("");
 
-    console.log('17' , user)
-    console.log('From auth provider usersName =' , usersName)
 
     const createUser = (email , password) => {
         setLoading(true);
@@ -43,8 +39,6 @@ const AuthProvider = ({children}) => {
 
     const updateUser = (userName , photo) => {
         setLoading(true);
-        setUsersName(userName);
-        setUserPhoto(photo);
         return updateProfile(auth.currentUser , {displayName: userName , photoURL: photo});
     }
 
@@ -55,7 +49,6 @@ const AuthProvider = ({children}) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth , loggedUser => {
-            console.log('logged in user inside auth state observer' , loggedUser)
             setUser(loggedUser);
             setLoading(false);
         })
@@ -71,8 +64,6 @@ const AuthProvider = ({children}) => {
         signIn,
         updateUser,
         logOut,
-        usersName,
-        userPhoto,
         handleGoogleSignIn,
         handleGithubSignIn
     }

@@ -13,7 +13,7 @@ const ViewAllRecipes = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch('http://localhost:5000/allchefsdata')
+        fetch('https://chef-recipe-hunting-assignment-server-side.vercel.app/allchefsdata')
             .then(res => res.json())
             .then(data => {
                 const findChef = data.find(element => element.id === parseInt(id));
@@ -25,7 +25,7 @@ const ViewAllRecipes = () => {
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/allrecipes')
+        fetch('https://chef-recipe-hunting-assignment-server-side.vercel.app/allrecipes')
             .then(res => res.json())
             .then(data => {
                 const findRecipes = data.filter(element => element.chef_id === parseInt(id));

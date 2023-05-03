@@ -6,7 +6,7 @@ const ChefsSection = () => {
     const [loading , setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allchefsdata')
+        fetch('https://chef-recipe-hunting-assignment-server-side.vercel.app/allchefsdata')
         .then(res => res.json())
         .then(data => {
             setAllChefsData(data);
