@@ -14,6 +14,9 @@ const AuthProvider = ({children}) => {
     const [usersName , setUsersName] = useState("");
     const [userPhoto , setUserPhoto] = useState("");
 
+    console.log('17' , user)
+    console.log('From auth provider usersName =' , usersName)
+
     const createUser = (email , password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth , email , password);
@@ -40,13 +43,13 @@ const AuthProvider = ({children}) => {
 
     const updateUser = (userName , photo) => {
         setLoading(true);
+        setUsersName(userName);
+        setUserPhoto(photo);
         return updateProfile(auth.currentUser , {displayName: userName , photoURL: photo});
     }
 
     const logOut = () => {
         setLoading(true);
-        setUserPhoto(null);
-        setUsersName(null);
         return signOut(auth);
     }
 
@@ -54,8 +57,6 @@ const AuthProvider = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth , loggedUser => {
             console.log('logged in user inside auth state observer' , loggedUser)
             setUser(loggedUser);
-            setUsersName(loggedUser.displayName);
-            setUserPhoto(loggedUser.photoURL);
             setLoading(false);
         })
         return () => {

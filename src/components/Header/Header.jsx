@@ -8,12 +8,8 @@ const Header = () => {
 
     const { user, logOut, updateUser , usersName , userPhoto} = useContext(AuthContext);
 
-    // console.log(usersName)
-    // console.log(userPhoto)
-
-
-    const userName = usersName? usersName : "No userName";
-
+    const userImage = user?.photoURL ? user.photoURL : "";
+    const userName = user?.displayName ? user.displayName : "";
 
     const handleLogOut = () => {
         logOut()
@@ -47,10 +43,10 @@ const Header = () => {
                 <div className="navbar-end">
                <Tooltip className='mr-1 font-semibold' id="my-tooltip" />
                     {
-                        userPhoto &&
+                        user &&
                             <div className="avatar mr-0 lg:mr-3 flex justify-end">
                                 <div className="w-10 rounded-full " data-tooltip-id="my-tooltip" data-tooltip-content={userName}>
-                                    <img src= {userPhoto} />
+                                    <img src= {userImage} />
                                 </div>
                             </div>
                     }
