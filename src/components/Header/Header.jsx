@@ -17,13 +17,11 @@ const Header = () => {
             .catch(error => console.log(error))
     }
 
-    
-
     return (
         <div>
-            <div className="navbar bg-yellow-300 add-font md: px-3">
+            <div className="navbar bg-yellow-300 add-font px-0 md:px-3">
                 <div className="navbar-start">
-                    <a className="btn btn-ghost normal-case text-2xl md:text-4xl text-gray-900 pl-0">MixedMasala</a>
+                    <a className="btn btn-ghost normal-case text-2xl md:text-4xl  text-gray-900 pl-0">MixedMasala</a>
                 </div>
                 <div className="navbar-center lg:flex gap-5">
                     <ul className="menu menu-horizontal px-1 text-xl text-gray-900">
