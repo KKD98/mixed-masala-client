@@ -11,6 +11,8 @@ import HomeBody from './components/HomeBody/HomeBody';
 import ViewAllRecipes from './components/ViewAllRecipes/ViewAllRecipes';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import AuthProvider from './providers/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +29,7 @@ const router = createBrowserRouter([
     },
     {
       path: "viewrecipes/:id",
-      element: <ViewAllRecipes></ViewAllRecipes>
+      element: <PrivateRoute><ViewAllRecipes></ViewAllRecipes></PrivateRoute>
     },
     {
       path: "login",
@@ -43,6 +45,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider><RouterProvider router={router} /></AuthProvider>
   </React.StrictMode>,
 )
