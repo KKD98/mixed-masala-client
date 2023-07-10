@@ -24,13 +24,13 @@ const Recipe = ({ recipe }) => {
     return (
         <div>
         
-            <div className="card w-full bg-yellow-100 shadow-xl mb-5 p-3">
+            <div className="card w-full bg-black shadow-xl mb-5 p-3">
                 <div className="card-body">
-                    <h2 className="card-title text-2xl font-sans mx-auto mb-4  bg-yellow-400  p-3  font-bold text-gray-900 rounded">{recipeName}</h2>
-                    <p className='text-xl font-semibold text-gray-900 mb-4'>Ingredients: {ingredients}</p>
-                    <p className='text-xl font-semibold text-gray-900 mb-3'>Cooking Method: {cookingMethod}</p>
+                    <h2 className="card-title text-2xl font-sans mx-auto mb-4  bg-black  p-3  font-bold text-yellow-700 rounded">{recipeName}</h2>
+                    <p className='text-xl font-semibold text-gray-400 mb-4'>Ingredients: {ingredients}</p>
+                    <p className='text-xl font-semibold text-gray-400 mb-3'>Cooking Method: {cookingMethod}</p>
                     <div className="card-actions flex justify-between items-center">
-                        <div className='text-yellow-500 text-2xl'>
+                        <div className='text-yellow-700 text-2xl'>
                             <Rating
                                 placeholderRating={rating}
                                 emptySymbol={<FaRegStar></FaRegStar>}
@@ -39,7 +39,7 @@ const Recipe = ({ recipe }) => {
                             />
                         </div>
 
-                        <button disabled={disabled} onClick={handleToast} className="btn bg-yellow-400 text-gray-900 border-none hover:bg-yellow-600">
+                        <button disabled={disabled} onClick={handleToast} className="bg-yellow-700 hover:bg-white text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                             Add to Favorite</button>
                     </div>
                 </div>

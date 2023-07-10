@@ -38,13 +38,13 @@ const Header = () => {
                     </ul>
                 </div>
                
-                <div className="navbar-end">
-               <Tooltip className='mr-1 font-semibold' id="my-tooltip" />
-                   <div>
+                <div className="navbar-end  ">
+               <Tooltip className='mr-1 font-semibold text-white' id="my-tooltip" />
+                   <div className='flex gap-1 items-center'>
                    {
                         user &&
                             <div className="avatar mr-0 lg:mr-3 flex justify-end">
-                                <div className="w-10 rounded-full " data-tooltip-id="my-tooltip" data-tooltip-content={userName}>
+                                <div className="w-10 h-10 rounded-full " data-tooltip-id="my-tooltip" data-tooltip-content={userName}>
                                     <img src= {userImage} />
                                 </div>
                             </div>
