@@ -19,20 +19,20 @@ const Header = () => {
 
     return (
         <div>
-            <div className="navbar bg-yellow-300 add-font px-0 md:px-3">
+            <div className="navbar bg-black add-font px-0 md:px-3">
                 <div className="navbar-start">
-                    <a className="btn btn-ghost normal-case text-2xl md:text-4xl  text-gray-900 pl-0">MixedMasala</a>
+                    <a className="btn btn-ghost normal-case text-2xl md:text-4xl  text-yellow-700 pl-0">MixedMasala</a>
                 </div>
                 <div className="navbar-center lg:flex gap-5">
-                    <ul className="menu menu-horizontal px-1 text-xl text-gray-900">
+                    <ul className="menu menu-horizontal px-1 text-xl text-white">
                         <NavLink to="/" className="mr-4 md:mr-10 font-semibold" style={({ isActive }) => {
                             return {
-                                color: isActive && "blue",
+                                color: isActive && "#b25900",
                             };
                         }}>Home</NavLink>
-                        <NavLink to="/blogs" className="font-semibold text-gray-900" style={({ isActive }) => {
+                        <NavLink to="/blogs" className="font-semibold text-white" style={({ isActive }) => {
                             return {
-                                color: isActive && "blue",
+                                color: isActive && "#b25900",
                             };
                         }}>Blog</NavLink>
                     </ul>
@@ -40,7 +40,8 @@ const Header = () => {
                
                 <div className="navbar-end">
                <Tooltip className='mr-1 font-semibold' id="my-tooltip" />
-                    {
+                   <div>
+                   {
                         user &&
                             <div className="avatar mr-0 lg:mr-3 flex justify-end">
                                 <div className="w-10 rounded-full " data-tooltip-id="my-tooltip" data-tooltip-content={userName}>
@@ -50,9 +51,10 @@ const Header = () => {
                     }
                     {
                         user ?
-                            <Link onClick={handleLogOut} className="btn  bg-white text-gray-900 border-none hover:bg-yellow-600">Logout</Link> :
-                            <Link to="/login" className="btn  bg-white text-gray-900 border-none hover:bg-yellow-600">Login</Link>
+                            <Link onClick={handleLogOut} className="bg-black hover:bg-yellow-600 hover:text-white text-xl border-2 border-yellow-700 text-yellow-700 font-semibold rounded p-2 mx-auto">Logout</Link> :
+                            <Link to="/login" className="bg-black hover:bg-yellow-600 hover:text-white text-xl border-2 border-yellow-700 text-yellow-700 font-semibold rounded p-2 mx-auto">Login</Link>
                     }
+                   </div>
                     
                 </div>
             </div>
