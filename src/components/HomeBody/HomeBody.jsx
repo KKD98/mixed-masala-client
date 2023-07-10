@@ -6,6 +6,7 @@ import AboutIndianCuisine from '../AboutIndianCuisine/AboutIndianCuisine';
 import NewestRecipe from '../NewestRecipe/NewestRecipe';
 import FoodBanner from '../FoodBanner/FoodBanner';
 import Reviews from '../Reviews/Reviews';
+import AddReviews from '../AddReviews/AddReviews';
 
 const HomeBody = () => {
     return (
@@ -17,6 +18,7 @@ const HomeBody = () => {
             <FoodBanner></FoodBanner>
             <AboutIndianCuisine></AboutIndianCuisine>
             <Reviews></Reviews>
+            <AddReviews></AddReviews>
         </div>
     );
 };
