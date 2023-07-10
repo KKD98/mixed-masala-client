@@ -5,6 +5,7 @@ import SignatureDishPart from '../SignatureDishPart/SignatureDishPart';
 import AboutIndianCuisine from '../AboutIndianCuisine/AboutIndianCuisine';
 import NewestRecipe from '../NewestRecipe/NewestRecipe';
 import FoodBanner from '../FoodBanner/FoodBanner';
+import Reviews from '../Reviews/Reviews';
 
 const HomeBody = () => {
     return (
@@ -15,6 +16,7 @@ const HomeBody = () => {
             <SignatureDishPart></SignatureDishPart>
             <FoodBanner></FoodBanner>
             <AboutIndianCuisine></AboutIndianCuisine>
+            <Reviews></Reviews>
         </div>
     );
 };
